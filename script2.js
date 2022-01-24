@@ -25,7 +25,7 @@ const teams = [
     },
 ]
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min +1)) - min;
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min +1)) + min;
 
 for (let i = 0; i < teams.length; i++) {
     const team = teams [i];
