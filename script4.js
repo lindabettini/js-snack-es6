@@ -7,17 +7,34 @@ ES (marco de iulio => Marco de iulio);
 BONUS  nei nomi sulle targhe l'iniziale di ogni parola deve essere maiuscola
 ES.: (marco de iulio  => Marco De Iulio) */
 
+// // Functions
+const capitalize = word => {
+    const firstLetter = word.charAt(0).toUpperCase(); 
+    const remainingLetters = word.substring(1).toLowerCase();
+    return firstLetter + remainingLetters;
+};
+
+const capitalizeAll = word => {
+    const words = word.split(' ');
+    const capitalizedWords = words.map((item) => capitalize(item));
+    const result = capitalizedWords.join(' ');
+    return result;
+};
+
+capitalizeAll('lucia de IULIO');
+
 let students = [
-    { name: 'Luisa', id: '457', grades: '78'},
-    { name: 'Linda', id: '457', grades: '78'},
-    { name: 'Lorenzo', id: '457', grades: '78'},
-    { name: 'Luigi', id: '457', grades: '78'},
-    { name: 'Ludovica', id: '457', grades: '78'},
-    { name: 'Lucrezia', id: '457', grades: '78'},
+    { name: 'luisa de IULIO', id: '457', grades: '78'},
+    { name: 'linda', id: '457', grades: '78'},
+    { name: 'lorenzo', id: '457', grades: '78'},
+    { name: 'luigi', id: '457', grades: '78'},
+    { name: 'ludovica', id: '457', grades: '78'},
+    { name: 'lucrezia', id: '457', grades: '78'},
 ];
 
 const targheStudenti = students.map((student) => {
-    return student.name; 
+    const capitalizedName = capitalizeAll(student.name); 
+    return capitalizedName;
 });
 
 const highGradesStudent = students.filter((student) => student.grades > 70);
