@@ -24,7 +24,7 @@ const bikes = [
 let lightestBike = bikes[0];
 console.log(lightestBike);
 
-// Le peso tutte per vedere quale pesa meno 
+// ° Le peso tutte per vedere quale pesa meno 
 for (let i = 0; i < bikes.length; i++) {
     const bike = bikes[i]; 
     const { weight } = bike; 
@@ -32,3 +32,4 @@ for (let i = 0; i < bikes.length; i++) {
 }
 
 console.log(lightestBike);
+
